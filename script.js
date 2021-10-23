@@ -254,8 +254,8 @@ buttonTwelve.addEventListener("click", function(){
     this.removeEventListener('click', arguments.callee);
 })
 
-// section 12 (push method):
-sectionEnd = document.getElementById("end");
+// section 13 (pop method):
+sectionFourteen = document.getElementById("fourteen");
 buttonThirteen = document.getElementsByClassName("run")[12];
 popArray = document.getElementsByClassName("pop")[0];
 let codingBoxThirteen = document.getElementsByClassName("coding-box")[12];
@@ -271,8 +271,58 @@ buttonThirteen.addEventListener("click", function(){
 
     popButton.addEventListener("click", function(){
         sectionThirteen.style.display = "none";
-        sectionEnd.style.display = "block";
+        sectionFourteen.style.display = "block";
     })
     
     this.removeEventListener('click', arguments.callee);
 })
+
+// section 14 (Array find element by index number):
+sectionEnd = document.getElementById("end");
+buttonFourteen = document.getElementsByClassName("run")[13];
+indexInput = document.getElementsByClassName("fruit")[0];
+let codingBoxFourteen = document.getElementsByClassName("coding-box")[13];
+let arrayElement = document.getElementById("array-element");
+
+buttonFourteen.addEventListener("click", function(){
+    let fruitIndex = document.createElement("p");
+    let fruitIndexText;
+
+    if(indexInput.value === "0") {
+        fruitIndexText = document.createTextNode(`apple`);
+    } else if (indexInput.value === "1") {
+        fruitIndexText = document.createTextNode(`banana`);
+    } else if (indexInput.value === "2") {
+        fruitIndexText = document.createTextNode(`mango`);
+    } else if (indexInput.value === "3") {
+        fruitIndexText = document.createTextNode(`kiwi`);
+    } else if (indexInput.value === "4") {
+        fruitIndexText = document.createTextNode(`melon`);
+    } else {
+        fruitIndexText = document.createTextNode(`undefined`);
+    }
+    indexInput.value="";
+
+    fruitIndex.appendChild(fruitIndexText);
+    codingBoxFourteen.appendChild(fruitIndex)
+    fruitIndex.classList.add("result");
+})
+
+buttonFourteen.addEventListener("click", nextButtonTwo)
+
+function nextButtonTwo(){
+    let outcomeButton = document.createElement("button")
+    let outcomeButtonText = document.createTextNode("Next");
+    outcomeButton.appendChild(outcomeButtonText);
+    codingBoxFourteen.appendChild(outcomeButton)
+    outcomeButton.classList.add("run")
+    buttonFourteen.removeEventListener("click", nextButton)
+    outcomeButton.classList.add("next")
+
+    outcomeButton.addEventListener("click", function(){
+        sectionFourteen.style.display = "none";
+        sectionEnd.style.display = "block";
+    })
+}
+        
+        

@@ -86,7 +86,7 @@ h1 {
 }
 
 #two, #three, #four, #five, #six, #seven, #eight,
- #nine, #ten, #eleven, #twelve, #thirteen, #end {
+ #nine, #ten, #eleven, #twelve, #thirteen, #fourteen, #end {
 	display: none;
 }
 
@@ -194,7 +194,7 @@ th,td{
 	width: 7vw;
 }
 
-.array-list, .pop{
+.array-list, .pop, .array-index{
 	display: none;
 }
 
@@ -205,6 +205,15 @@ th,td{
     text-align: center;
     width: 90px;
 	bottom: 20px;
+}
+
+.fruit{
+	width: 20px;
+	color: #9a5cff;
+}
+
+img{
+	margin-top: 20px;
 }
 
 @media all and (max-width: 850px) {
