@@ -180,6 +180,8 @@ function comparisonCheck(event){
 
     if(compOne.value.length === 0 || compTwo.value.length === 0){
         alert("Please enter two numbers")
+        tenthButton.removeEventListener("click", nextButton)
+        tenthButton.addEventListener("click", nextButton)
         return;
 
     } else if(parseFloat(compOne.value) <= parseFloat(compTwo.value)){
@@ -237,8 +239,14 @@ let arrayList = document.getElementsByClassName("array-list")[0];
 let newItem = document.getElementById("new-item");
 
 buttonTwelve.addEventListener("click", function(){
-    newItem.innerHTML = newItem.innerHTML + pushInput.value; 
+    if(pushInput.value === ""){
+        alert("Please enter in a new item")
+        this.removeEventListener('click', arguments.callee);
+        this.addEventListener('click', arguments.callee);
+    } else {
+        newItem.innerHTML = newItem.innerHTML + pushInput.value; 
     arrayList.style.display = "block";
+    this.removeEventListener('click', arguments.callee);
 
     let pushButton = document.createElement("button");
     let pushButtonText = document.createTextNode("Next");
@@ -250,8 +258,10 @@ buttonTwelve.addEventListener("click", function(){
         sectionTwelve.style.display = "none";
         sectionThirteen.style.display = "block";
     })
+     
     
-    this.removeEventListener('click', arguments.callee);
+    }
+    
 })
 
 // section 13 (pop method):
